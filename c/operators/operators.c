@@ -1,4 +1,7 @@
  #include <stdio.h>
+ #include <string.h>
+#include <math.h>
+#include <stdlib.h>
 
 //////////////////////////////////////////////// arithmetic operator ////////////////////////////////////////////////
 //  double operators (int a, int b){
@@ -64,8 +67,8 @@ void conditionalStatement(){
     // printf("%d", arithmeticOperators(10, 3));
     
     // Conditional Statement
-    conditionalStatement();
+    // conditionalStatement();
 
+  
     return 0;
-    
  }
