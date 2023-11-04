@@ -7,7 +7,7 @@ int int_rev(int n, int s)
     {
         return s;
     }
-    s = (s * 10 )+ (n % 10);
+    s = (s * 10) + (n % 10);
     return int_rev(n / 10, s);
 }
 
