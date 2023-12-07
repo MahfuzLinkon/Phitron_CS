@@ -45,8 +45,10 @@ void check_ascending_sort(Node *head)
 {
     bool flag = true;
     Node *tmp = head;
-    while (tmp->next != NULL)
+    while (true)
     {
+        if (tmp->next == NULL)
+            break;
         if (tmp->val > tmp->next->val)
         {
             flag = false;
