@@ -109,6 +109,5 @@ int main()
     print_list(head);
     cout << "Tail: " << tail->val << endl;
 
-
     return 0;
 }

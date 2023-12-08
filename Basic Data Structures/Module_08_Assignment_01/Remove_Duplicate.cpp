@@ -14,7 +14,7 @@ public:
     }
 };
 
-void insert_tail(Node *&head, Node *&tail, int v)
+void insert_node(Node *&head, Node *&tail, int v)
 {
     Node *newNode = new Node(v);
     if (head == NULL)
@@ -35,40 +35,45 @@ void print_list(Node *head)
         cout << tmp->val << " ";
         tmp = tmp->next;
     }
-    cout << endl; 
+    cout << endl;
 }
 
-void descending_sort(Node *head)
+void remove_duplicate(Node *head)
 {
-    for (Node *i = head; i->next != NULL; i = i->next)
+    Node *tmp = head;
+    while (tmp != NULL && tmp->next != NULL)
     {
-        for (Node *j = i->next; j != NULL; j = j->next)
+        Node *tmp2 = tmp;
+        while (tmp2->next != NULL)
         {
-            if (i->val < j->val)
+            if (tmp->val == tmp2->next->val)
             {
-                swap(i->val, j->val);
+                Node *deleteNode = tmp2->next;
+                tmp2->next = deleteNode->next;
+                delete deleteNode;
+            }
+            else
+            {
+                tmp2 = tmp2->next;
             }
         }
+        tmp = tmp->next;
     }
 }
 
 int main()
 {
-    Node *head = NULL; 
+    Node *head = NULL;
     Node *tail = NULL;
-
     while (true)
     {
         int v;
         cin >> v;
         if (v == -1)
             break;
-        insert_tail(head, tail, v);
+        insert_node(head, tail, v);
     }
-
+    remove_duplicate(head);
     print_list(head);
-    descending_sort(head);
-    print_list(head);
-
     return 0;
 }
